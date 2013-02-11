@@ -8,7 +8,18 @@
 </head>
 <body>
 
+  <% flash.each do |key, message| %>
+  <p><%= "#{key.upcase}: #{message}" %></p>
+
+  <% end %>
+
 <%= yield %>
+
+<% if @current_user %>
+  <%= link_to "Logout", sessions_path, :method => :delete %>
+<% elsif !@login_page %>
+  <%= link_to "Login", new_sessions_path %>
+<% end %>
 
 </body>
 </html>

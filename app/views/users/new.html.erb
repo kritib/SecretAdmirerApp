@@ -1,0 +1,8 @@
+<h1>Sign up</h1>
+
+<%= simple_form_for(@user) do |f| %>
+
+<%= f.error_notification %>
+  <%= f.input :username %>
+  <%= f.button :submit, value: "Sign up" %>
+<% end %>
