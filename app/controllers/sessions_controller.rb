@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
       end
 
     else
-      flash[:error] = "You need to sign up"
-      redirect_to new_user_path
+      flash[:error] = "Invalid username"
+      render 'new'
     end
   end
 

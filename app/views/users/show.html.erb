@@ -1,4 +1,6 @@
-<h1>@user.username</h1>
+<h1><%= @user.username %></h1>
 
-<% render '/shared/posts' %>
+<%= render '/shared/posts' %>
 
+<%= link_to "My posts", posts_user_path(@user.id) %>
+<%= link_to "Create a new post", new_post_path %>

@@ -1,8 +1,13 @@
 SecretAdmirerApp::Application.routes.draw do
 
-  root to: 'static_pages#index'
+  root to: 'posts#index'
 
-  resources :users
+  resources :users do
+    member do
+      get "posts"
+    end
+  end
+
   resources :comments
   resources :posts
   resource :sessions

@@ -1,0 +1,15 @@
+<h1>Create a new comment</h1>
+
+<%= render 'shared/posts' %>
+
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.text_field :text %>
+
+  <%= f.hidden_field :post_id %>
+  <%= f.hidden_field :commenter_id, value: @current_user.id %>
+
+  <%= f.button :submit %>
+
+<% end %>

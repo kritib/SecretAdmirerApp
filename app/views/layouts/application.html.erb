@@ -8,6 +8,15 @@
 </head>
 <body>
 
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href='/'>SecretAdmirer</a>
+      <ul class="nav pull-right">
+        <%= render "shared/navbar" %>
+      </ul>
+    </div>
+  </div>
+
   <% flash.each do |key, message| %>
   <p><%= "#{key.upcase}: #{message}" %></p>
 
@@ -15,11 +24,7 @@
 
 <%= yield %>
 
-<% if @current_user %>
-  <%= link_to "Logout", sessions_path, :method => :delete %>
-<% elsif !@login_page %>
-  <%= link_to "Login", new_sessions_path %>
-<% end %>
+
 
 </body>
 </html>

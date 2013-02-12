@@ -1,0 +1,13 @@
+<% if @current_user %>
+  <li>
+    <%= link_to @current_user.username, user_path(@current_user) %>
+  </li>
+
+  <li>
+    <%= link_to "Logout", sessions_path, :method => :delete %>
+  </li>
+<% elsif !@login_page %>
+  <li>
+    <%= link_to "Login", new_sessions_path %>
+  </li>
+<% end %>

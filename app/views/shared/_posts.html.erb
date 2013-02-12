@@ -1,0 +1,29 @@
+
+
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class= "span8">
+      <div class="well">
+        <p>
+          <p>Dear
+            <%= link_to_user_page(post.recipient) %>,
+          </p>
+
+          <p><%= post.text %></p>
+
+          Love,<br>
+          Your Secret Admirer
+        </p>
+
+        <%= time_ago_in_words(post.created_at) %> ago
+        <%= link_to "add a comment", new_comment_path(:post_id => post.id) %>
+        <%= link_to "comments", post_path(post.id) %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
